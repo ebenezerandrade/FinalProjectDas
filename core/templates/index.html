@@ -31,7 +31,7 @@
                         Classificador de imagens e visualizador em filtro
                     </h2>
                     <p>
-                        <a href="#" class="pure-button primary-button">Saiba mais</a>
+                        <a action="{% url 'core:contact' %}"href="#" class="pure-button primary-button">Saiba mais</a>
                     </p>
                 </div>
             </div>
@@ -46,6 +46,14 @@
                     <p>
                         breve descrição
                     </p>
+
+                    <div class="pure-button primary-button">
+                        <form action="{% url 'core:contact' %}" class="form-inline">
+                    
+                    
+                        <button>Detecção de faces</button>
+                    </form>
+
                 </div>
             </div>
             <div class="pure-u-1-3">

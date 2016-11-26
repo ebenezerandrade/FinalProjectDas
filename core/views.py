@@ -7,5 +7,5 @@ def index(request):
     #return render(request, '/home/ebenezer/DAS/projectDas/core/templates/index.html')
 
 def contact(request):
-	return render(resquest, 'contact.html')
+	return render(request, 'contact.html')
 	#return render(resquest, '/home/ebenezer/DAS/projectDas/core/templates/contact.html')
