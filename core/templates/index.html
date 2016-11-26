@@ -16,7 +16,7 @@
             <a class="pure-menu-heading" href="">Projeto DAS</a>
             <ul>
                 <li class="pure-menu-selected"><a href="#">Início</a></li>
-                <li><a href="#">Contato</a></li>
+                <li><a action="{% url 'core:contact' %}"" href="#">Detecção de faces</a></li>
             </ul>
         </div>
     </div>
@@ -28,11 +28,8 @@
                         Processamento de imagens
                     </h1>
                     <h2 class="splash-subhead">
-                        Classificador de imagens e visualizador em filtro
+                        Descrição geral do projeto
                     </h2>
-                    <p>
-                        <a href="#" class="pure-button primary-button">Saiba mais</a>
-                    </p>
                 </div>
             </div>
         </div>
@@ -41,24 +38,30 @@
         <div class="pure-g-r content-ribbon">
             <div class="pure-u-2-3">
                 <div class="l-box">
-                    <h4 class="content-subhead">Classificador de imagens</h4>
+                    <h4 class="content-subhead">Detector de faces</h4>
                     <h3>Carregue suas imagens</h3>
                     <p>
-                        breve descrição
+                        Identifique a quantidade de faces em uma imagem. Você pode fazer isso atráves de um diretório local ou a partir de uma URL.
                     </p>
+
+                    <div>
+                        <form action="{% url 'core:contact' %}" class="form-inline">
+                        <button class="pure-button primary-button">Ir para detecção de faces</button>
+                    </form>
+                    </div>
                 </div>
             </div>
             <div class="pure-u-1-3">
                 <div class="l-box">
-                    <img src="http://placehold.it/400x250"
-                         alt="Vídeo aulas e materiais digitais.">
+                    <img src="{% static 'imagens/lena.jpg' %}"
+                         alt="#">
                 </div>
             </div>
         </div>
         <div class="pure-g-r content-ribbon">
             <div class="pure-u-1-3">
                 <div class="l-box">
-                    <img src="http://placehold.it/400x250"
+                    <img src=""
                          alt="Fórum de Dúvidas">
                 </div>
             </div>
