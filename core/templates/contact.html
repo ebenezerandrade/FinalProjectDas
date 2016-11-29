@@ -45,9 +45,16 @@
                     </p>
 
                     <div>
-                        <form action="{% url 'core:contact' %}" class="form-inline">
-                        <button class="pure-button primary-button">Ir para detecção de faces</button>
+                        <form action="{% url 'core:contact' %}" class="form-inline" method="POST">
+                        {% csrf_token %}
+                        Inserir a URL:
+                        <input type="text" name="Nome" size="40" /> 
+                        <input type="submit" name="">
                     </form>
+                    {% if show_image %}
+                    <img src="{% static 'imagens/test_image_URL.png' %}"
+                         alt="#">
+                    {% endif %}
                     </div>
                 </div>
             </div>
