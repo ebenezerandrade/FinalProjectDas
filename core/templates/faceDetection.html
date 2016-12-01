@@ -15,8 +15,8 @@
         <div class="pure-menu pure-menu-open pure-menu-fixed pure-menu-horizontal">
             <a class="pure-menu-heading" href="">Projeto DAS</a>
             <ul>
-                <li class="pure-menu-selected"><a href="#">Início</a></li>
-                <li><a action="{% url 'core:contact' %}"" href="#">Detecção de faces</a></li>
+                <li class="pure-menu-selected"><a href="{% url 'core:index' %}">Início</a></li>
+                <li><a>Detecção de faces</a></li>
             </ul>
         </div>
     </div>
@@ -45,7 +45,7 @@
                     </p>
 
                     <div>
-                        <form action="{% url 'core:contact' %}" class="form-inline" method="POST">
+                        <form action="{% url 'core:faceDetection' %}" class="form-inline" method="POST">
                         {% csrf_token %}
                         Inserir a URL:
                         <input type="text" name="Nome" size="40" /> 

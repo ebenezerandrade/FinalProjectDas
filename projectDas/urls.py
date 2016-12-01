@@ -19,8 +19,6 @@ from django.contrib import admin
 from core import views
 
 urlpatterns = [
-    #url(r'core/', include('core.urls', namespace='core')),
-    #url(r'^contact//', include('core.urls')),
     url(r'^admin/', admin.site.urls),
     url(r'^',  include('core.urls', namespace='core')),
 ]
