@@ -10,6 +10,9 @@ def index(request):
 
 def faceDetection(request):
     def processFaces(file ,object):
+
+        global quantity_faces
+
         # Directory with the classifier for the facesFrontais
         faceCascade = cv2.CascadeClassifier('core/haarcascade_frontalface_default.xml')
         image = cv2.imread(object)
@@ -26,11 +29,12 @@ def faceDetection(request):
 
         # Print amount faces found
         print "Encontradas {0} faces!".format(len(faces))
+        quantity_faces = "Encontradas " + format(len(faces)) + " faces!"
 
         # Draw retangle in around faces
         for (x, y, w, h) in faces:
             cv2.rectangle(image, (x, y), (x+w, y+h), (0, 255, 0), 2)
-        
+
         cv2.imwrite(file, image)
         return file
 
@@ -53,6 +57,9 @@ def faceDetection(request):
         imageCode = file
         processFaces(file, imageCode)
 
-    context = {'show_image': 'True'}
+    context = {
+        'show_image': 'True',
+        'quantity_faces': quantity_faces,
+    }
 
     return render(request, 'faceDetection.html', context)

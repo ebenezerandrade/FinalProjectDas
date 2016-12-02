@@ -41,19 +41,20 @@
                     <h4 class="content-subhead">Detector de faces</h4>
                     <h3>Carregue suas imagens</h3>
                     <p>
-                        Identifique a quantidade de faces em uma imagem. Você pode fazer isso atráves de um diretório local ou a partir de uma URL.
+                        Identifique a quantidade de faces em uma imagem. Para isso, insira a URL da imagem.
                     </p>
 
                     <div>
                         <form action="{% url 'core:faceDetection' %}" class="form-inline" method="POST">
                         {% csrf_token %}
                         Inserir a URL:
-                        <input type="text" name="Nome" size="40" /> 
+                        <input type="text" name="Nome" size="40" />
                         <input class="pure-button primary-button" type="submit" name="">
                     </form>
                     {% if show_image %}
                     <img src="{% static 'imagens/test_image_URL.png' %}"
                          alt="#">
+                        <h2>{{quantity_faces}}</h2>
                     {% endif %}
                     </div>
                 </div>
